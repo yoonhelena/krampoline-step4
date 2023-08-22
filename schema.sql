@@ -3,8 +3,8 @@ CREATE SCHEMA IF NOT EXISTS `krampoline` DEFAULT CHARACTER SET utf8mb4;
 USE `krampoline`;
 
 
-DROP TABLE IF EXISTS `test_table`;
-CREATE TABLE `test_table` (
+DROP TABLE IF EXISTS `sample_data`;
+CREATE TABLE `sample_data` (
                            `id` int(11) NOT NULL AUTO_INCREMENT,
                            `detail` varchar(100) NOT NULL,
                            PRIMARY KEY (`id`),
