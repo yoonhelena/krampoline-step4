@@ -8,3 +8,9 @@ configMapGenerator:
   - name: nginx
     files:
       - configs/default.conf
+  - name: init-data
+    files:
+      - configs/data.sql
+  - name: schema
+    files:
+      - configs/schema.sql
