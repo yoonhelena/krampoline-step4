@@ -32,10 +32,8 @@ spec:
             - mountPath: /var/lib/mysql
               name: data
               subPath: mysql
-            - name: schema
-              mountPath: /docker-entrypoint-initdb.d
-            - name: init-data
-              mountPath: /docker-entrypoint-initdb.d
+            - mountPath: /docker-entrypoint-initdb.d
+              name: init-db
           resources:
             limits:
               memory: 1Gi
@@ -43,12 +41,9 @@ spec:
             tcpSocket:
               port: 3306
       volumes:
-        - name: schema
+        - name: init-db
           configMap:
-            name: schema
-        - name: init-data
-          configMap:
-            name: init-data
+            name: init-db
   volumeClaimTemplates:
     - metadata:
         name: data
@@ -64,6 +59,8 @@ kind: Service
 metadata:
   name: mariadb
 spec:
+  type: ClusterIP
+  clusterIP: None # Headless
   selector:
     app: mariadb
   ports:
