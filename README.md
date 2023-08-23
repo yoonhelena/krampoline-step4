@@ -10,3 +10,6 @@
 
 현재 저장소에서는 nginx와 데이터베이스의 초기 데이터를 위한 config 파일이 있습니다.
 쿠버네티스를 통해서 해당 설정들을 어떻게 하는지를 확인할 수 있습니다.
+
+
+![image](https://github.com/MonoKim01/krampoline-step4/assets/85483855/1421cd44-8c34-4b6d-ab5e-222c9a63e4d7)
